@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API Query</title>
+</head>
+<body>
+    <h1>Query the API</h1>
+    <form method="POST">
+        <label for="user_input">Enter text:</label>
+        <input type="text" id="user_input" name="user_input">
+        <button type="submit">Query</button>
+    </form>
+    {% if output %}
+        <h2>API Output:</h2>
+        <pre>{{ output[0]['generated_text'] }}</pre>
+    {% endif %}
+    {% if error %}
+        <h2>Error:</h2>
+        <p>{{ error }}</p>
+    {% endif %}
+</body>
+</html>
